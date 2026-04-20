@@ -5,9 +5,7 @@ plugins {
 
 android {
     namespace = "com.orsac.gov.villagesathi"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.orsac.gov.villagesathi"
@@ -45,6 +43,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
+    implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.play.services.auth)
     implementation(libs.play.services.location)

@@ -12,8 +12,4 @@
         android:id="@+id/navigation_categories"
         android:icon="@drawable/apps"
         android:title="Categories" />
-<!--    <item-->
-<!--        android:id="@+id/navigation_print"-->
-<!--        android:icon="@drawable/ic_print"-->
-<!--        android:title="Print" />-->
 </menu>

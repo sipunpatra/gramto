@@ -1,10 +1,12 @@
 package com.orsac.gov.villagesathi.ui.products
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.orsac.gov.villagesathi.adapter.ProductAdapter
@@ -12,6 +14,7 @@ import com.orsac.gov.villagesathi.databinding.FragmentProductListBinding
 import com.orsac.gov.villagesathi.ui.products.repository.ProductListRepository
 import com.orsac.gov.villagesathi.ui.products.viewmodel.ProductListViewModel
 import com.orsac.gov.villagesathi.ui.products.viewmodel.ProductListViewModelFactory
+import com.orsac.gov.villagesathi.ui.viewmodel.CartViewModel
 
 class ProductListFragment : Fragment() {
 
@@ -19,6 +22,7 @@ class ProductListFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var viewModel: ProductListViewModel
+    private val cartViewModel: CartViewModel by activityViewModels()
     private var categoryName: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,7 +65,18 @@ class ProductListFragment : Fragment() {
 
     private fun observeViewModel() {
         viewModel.products.observe(viewLifecycleOwner) { products ->
-            binding.rvProducts.adapter = ProductAdapter(products, onAddClick = {})
+            binding.rvProducts.adapter = ProductAdapter(
+                products = products,
+                onAddClick = { product ->
+                    cartViewModel.addToCart(product)
+                },
+                onProductClick = { product ->
+                    val intent = Intent(requireContext(), ProductDetailsActivity::class.java).apply {
+                        putExtra("product_id", product.id)
+                    }
+                    startActivity(intent)
+                }
+            )
         }
     }
 

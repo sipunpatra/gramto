@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.orsac.gov.villagesathi.R
@@ -12,7 +13,8 @@ import com.orsac.gov.villagesathi.model.ProductModel
 
 class ProductAdapter(
     private val products: List<ProductModel>,
-    private val onAddClick: (ProductModel) -> Unit
+    private val onAddClick: (ProductModel) -> Unit,
+    private val onProductClick: (ProductModel) -> Unit
 ) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
@@ -32,6 +34,10 @@ class ProductAdapter(
         holder.btnAdd.setOnClickListener {
             onAddClick(product)
         }
+        
+        holder.llProduct.setOnClickListener {
+            onProductClick(product)
+        }
     }
 
     override fun getItemCount() = products.size
@@ -44,5 +50,6 @@ class ProductAdapter(
         val originalPrice: TextView = itemView.findViewById(R.id.tvOriginalPrice)
         val discount: TextView = itemView.findViewById(R.id.tvDiscount)
         val btnAdd: Button = itemView.findViewById(R.id.btnAdd)
+        val llProduct: LinearLayout = itemView.findViewById(R.id.llProduct)
     }
 }

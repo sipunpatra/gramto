@@ -21,6 +21,9 @@
             android:name=".ui.DashboardActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.products.ProductDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".user.UserLoginActivity"
             android:exported="false" />
         <activity
