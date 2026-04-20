@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue_600">#0018be</color>
+    <color name="yellow_pastel">#EE8002</color>
+    <color name="mustard_pastel">#F89B08</color>
+    <color name="sun_glow">#0018be</color>
+    <color name="M_green">#19653F</color>
+    <color name="L_green">#498C6A</color>
+    <color name="transparent_grey">#5C000000</color>
+    <color name="w">#f3fbf5</color>
+    <color name="w1">#e6f8ea</color>
+    <color name="w2">#2d7e9b</color>
+    <color name="w3">#68cd91</color>
+    <color name="grey500">#787878</color>
+    <color name="orange">#FF9800</color>
+
+    <color name="gramit_orange">#F2994A</color>
+    <color name="gramit_yellow">#F2C94C</color>
+    <color name="gramit_green_dark">#4CAF50</color>
+    <color name="gramit_green_light">#81C784</color>
+    <color name="gramit_white">#FFFFFF</color>
+    <color name="gramit_brown">#A66A4C</color>
+
+
+</resources>

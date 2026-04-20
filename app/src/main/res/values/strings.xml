@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GRAMIT</string>
+    <string name="title_home">Home</string>
+    <string name="title_order_again">Order Again</string>
+    <string name="title_categories">Categories</string>
+    <string name="title_print">Print</string>
+    <string name="search_groceries_food"><![CDATA[Search groceries & food]]></string>
+</resources>
